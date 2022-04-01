@@ -1,0 +1,23 @@
+const container = document.querySelector('.container');
+const female_btn = document.querySelector('.female_btn');
+const male_btn = document.querySelector('.male_btn');
+
+male_btn.addEventListener('click', () => {
+    male_btn.style.position = 'absolute';
+
+    const random_left = Math.floor(Math.random() * container.clientWidth);
+    const random_top = Math.floor(Math.random() * container.clientHeight);
+
+    if (random_left >= container.clientWidth / 2)
+        male_btn.style.left = `${random_left - male_btn.clientWidth}px`;
+
+    if (random_top >= container.clientHeight / 2)
+        male_btn.style.top = `${random_top - male_btn.clientHeight}px`;
+})
+
+female_btn.addEventListener('click', () => {
+    container.innerHTML = `<h2>
+                            I knew it!!! <br>
+                            You had no PP 😂😂😂 <br>
+                            </h2>`
+}) 
